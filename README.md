@@ -30,7 +30,7 @@
 
 
 
-# Todo
+# Todos
 - [ ] make controller looks pretty
 - [ ] make another window for checking original img.
 - [ ] getting Current File automatically or making dialog to get a source img.
