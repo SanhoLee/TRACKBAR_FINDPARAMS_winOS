@@ -19,7 +19,7 @@ int main(int argc, char **argv)
     char srcDir[100];
     char OutDir[100];
 
-    Mat imgMasked, imgBlur, imgCanny;
+    Mat imgSrc, imgBlur, imgCanny;
     int rtnKey = 0;
 
     // get filename.
@@ -53,38 +53,39 @@ int main(int argc, char **argv)
 
 
     // create window.
-    namedWindow(CANNY_TRACKBAR, WINDOW_NORMAL);
+    namedWindow(TRACKBAR_CANNY, WINDOW_NORMAL);
+    namedWindow(WIN_IMG_ORIGIN, WINDOW_NORMAL);
 
     // create new trackbar.
-    createTrackbar("lowThres : ", CANNY_TRACKBAR, &lowThres, 200);
-    createTrackbar("highThres : ", CANNY_TRACKBAR, &highThres, 200);
+    createTrackbar("LOW", TRACKBAR_CANNY, &lowThres, 200);
+    createTrackbar("HIGH", TRACKBAR_CANNY, &highThres, 200);
 
     while (true)
     {
         /* read origin img */
         //imgMasked = imread(imgReadPath);
-        imgMasked = imread("img/road.jpg");
-        if (isImgEmpty(imgMasked, imgReadPath))
+        imgSrc = imread("img/road.jpg");
+        if (isImgEmpty(imgSrc, imgReadPath))
         {
             return 0;
         }
 
         /* Blur img and Canny Edge function run. */
-        GaussianBlur(imgMasked, imgBlur, Size(kernelSize, kernelSize), kernelSize, kernelSize);
+        GaussianBlur(imgSrc, imgBlur, Size(kernelSize, kernelSize), kernelSize, kernelSize);
         Canny(imgBlur, imgCanny, lowThres, highThres);
 
         /* show current masking color boundary. */
         show_cannyEdgeValue(lowThres, highThres);
 
         // show origin and cannyEdge img.
-        imshow("imgCanny", imgCanny);
+        imshow(WIN_IMG_ORIGIN, imgSrc);
+        imshow(TRACKBAR_CANNY, imgCanny);
         rtnKey = waitKey(1);
 
         /* save masked img when esc key is pressed. */
         if (rtnKey == 27)
         {
-            strcat(imgOutPath, CANNY_OUTPUT);
-            imwrite(imgOutPath, imgCanny);
+            destroyAllWindows();
             return 0;
         }
     }

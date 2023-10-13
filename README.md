@@ -31,7 +31,7 @@
 
 
 # Todos
-- [ ] make controller looks pretty
-- [ ] make another window for checking original img.
+- [x] make controller looks pretty -> integrating trackbar with the reuslt img on a single window.
+- [x] make another window for checking original img.
 - [ ] getting Current File automatically or making dialog to get a source img.
 - [ ] organizing readme file

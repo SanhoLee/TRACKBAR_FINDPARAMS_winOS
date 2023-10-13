@@ -1,8 +1,10 @@
 #ifndef __HLS_HEADER__
 #define __HLS_HEADER__
 
-#define HLS_TRACKBAR "HLS_trackbar"
-#define CANNY_TRACKBAR "CANNY_trackbar"
+#define HLS_TRACKBAR	"HLS_trackbar"
+#define TRACKBAR_CANNY	"trackbar_canny"
+#define WIN_IMG_ORIGIN		"win_img_origin"
+#define WIN_IMG_CANNY		"win_img_canny"
 
 #define HLS_outDIR "/data/HLS/"
 #define CANNY_outDIR "/data/CANNYEDGE/"
