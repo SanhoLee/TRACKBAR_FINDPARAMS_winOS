@@ -1,5 +1,4 @@
 x64
-img
 **/*.out
 **/*.exe
 *.vcxproj.user
