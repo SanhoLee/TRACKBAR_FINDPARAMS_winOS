@@ -15,9 +15,6 @@ int main(int argc, char **argv)
     Mat imgSrc, imgBlur, imgCanny;
     int rtnKey = 0;
 
-    // get filename.
-    String img_filename = "img/road.jpg";
-
     // create window.
     namedWindow(TRACKBAR_CANNY, WINDOW_AUTOSIZE);
     namedWindow(WIN_IMG_ORIGIN, WINDOW_AUTOSIZE);
@@ -29,7 +26,7 @@ int main(int argc, char **argv)
     while (true)
     {
         /* read origin img */
-        imgSrc = imread(img_filename);
+        imgSrc = imread(IMG_FILENAME);
         if (imgSrc.empty()) {
             cout << "IMG LOADED FAILED " << endl;
             return -1;
