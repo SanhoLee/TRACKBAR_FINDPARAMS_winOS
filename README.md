@@ -6,7 +6,6 @@
 
 <br>
 
-
 # Background
 - OS : Windows11
 - IDE : Visual Studio 2022 Community
@@ -17,21 +16,27 @@
     2) With HLS colored img, both max and min values of each boundaries(H,L,S) for masking could be identified. 
 
 # How to work
-1. 
-2. 
+1. Canny-Edge Trackbar : Just dragging either max or min threshold value on trackbar.
+2. HLS Trackbar : ...
  
-
 
 # Snapshots
 
-![img1](#)
+1. Trackbar by [Canny-edge](https://docs.opencv.org/3.4/da/d5c/tutorial_canny_detector.html) algorithm method.
+<br>
 
-![img2](#)
+| Original Img  | ![imgOriginal](img/road.jpg) |
+| :---: | :---: | 
+| **Canny Img** | ![imgCanny](img/canny_edge_demo.gif) |
+<br>
 
+2. Trackbar by HLS algorithm method.
+...
 
 
 # Todos
 - [x] make controller looks pretty -> integrating trackbar with the reuslt img on a single window.
 - [x] make another window for checking original img.
-- [ ] getting Current File automatically or making dialog to get a source img.
+- [x] getting Current File automatically or making dialog to get a source img.
+- [ ] Do same process in case of HLS img(trackbar).
 - [ ] organizing readme file
